@@ -1,6 +1,6 @@
-name: chainlit-agent
+name: idm-agent
 metadata:
-  template: chainlit-agent@1.0.0
+  template: idm-agent@1.0.0
 services:
   web:
     project: ./src/chainlit
