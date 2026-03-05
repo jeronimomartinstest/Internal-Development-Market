@@ -113,6 +113,17 @@ module searchService 'core/search/search-services.bicep' = if (useSearch) {
   }
 }
 
+// Blob Storage for AI Foundry
+module blobStorage 'core/storage/blob-storage.bicep' = {
+  name: 'blob-storage'
+  scope: resourceGroup
+  params: {
+    name: 'st${resourceToken}'
+    location: location
+    tags: tags
+  }
+}
+
 // AI Foundry (replaces hub + project + cognitiveservices)
 module aiFoundry 'core/ai/ai-foundry.bicep' = {
   name: 'ai-foundry'
